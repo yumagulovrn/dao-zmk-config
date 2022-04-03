@@ -1,18 +1,49 @@
-on:
-  push:
-    paths:
-      - 'config/**'
-  workflow_dispatch:
+on: [push, pull_request, workflow_dispatch]
 
 name: Build
 
 jobs:
+  matrix:
+    runs-on: ubuntu-latest
+    name: Fetch Build Keyboards
+    outputs:
+      matrix: ${{ steps.set-matrix.outputs.matrix }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Install yaml2json
+        run: python3 -m pip install remarshal
+      - id: set-matrix
+        name: Fetch Build Matrix
+        run: |
+          matrix=$(yaml2json build.yaml | jq -c .)
+          yaml2json build.yaml
+          echo "::set-output name=matrix::${matrix}"
   build:
     runs-on: ubuntu-latest
     container:
-      image: zmkfirmware/zmk-build-arm:2.5
+      image: zmkfirmware/zmk-build-arm:stable
+    needs: matrix
     name: Build
+    strategy:
+      fail-fast: false
+      matrix: ${{fromJson(needs.matrix.outputs.matrix)}}
     steps:
+      - name: Prepare variables
+        id: variables
+        run: |
+          if [ -n "${{ matrix.shield }}" ]; then
+            EXTRA_CMAKE_ARGS="-DSHIELD=${{ matrix.shield }}"
+            ARTIFACT_NAME="${{ matrix.shield }}-${{ matrix.board }}-zmk"
+            DISPLAY_NAME="${{ matrix.shield }} - ${{ matrix.board }}"
+          else
+            EXTRA_CMAKE_ARGS=
+            DISPLAY_NAME="${{ matrix.board }}"
+            ARTIFACT_NAME="${{ matrix.board }}-zmk"
+          fi
+          echo ::set-output name=extra-cmake-args::${EXTRA_CMAKE_ARGS}
+          echo ::set-output name=artifact-name::${ARTIFACT_NAME}
+          echo ::set-output name=display-name::${DISPLAY_NAME}
       - name: Checkout
         uses: actions/checkout@v2
       - name: Cache west modules
@@ -37,33 +68,23 @@ jobs:
         run: west update
       - name: West Zephyr export
         run: west zephyr-export
-
-      - name: West Build (Dao Left)
-        run: west build -p -s zmk/app -b dao_left -d dao_left -- -DZMK_CONFIG="${GITHUB_WORKSPACE}/config"
-      - name: Dao DTS File
-        if: ${{ always() }}
-        run: cat -n dao_left/zephyr/dao_left.dts.pre.tmp
-      - name: Dao Left Kconfig file
-        run: cat dao_left/zephyr/.config | grep -v "^#" | grep -v "^$"
-      - name: Rename zmk.uf2
-        run: cp dao_left/zephyr/zmk.uf2 dao_left.uf2
-      - name: Archive (Dao Left)
+      - name: West Build (${{ steps.variables.outputs.display-name }})
+        run: |
+          west build -s zmk/app -b ${{ matrix.board }} -- -DZMK_CONFIG=${GITHUB_WORKSPACE}/config ${{ steps.variables.outputs.extra-cmake-args }} ${{ matrix.cmake-args }}
+      - name: ${{ steps.variables.outputs.display-name }} Kconfig file
+        run: cat build/zephyr/.config | grep -v "^#" | grep -v "^$"
+      - name: Rename artifacts
+        run: |
+          mkdir build/artifacts
+          if [ -f build/zephyr/zmk.uf2 ]
+          then
+            cp build/zephyr/zmk.uf2 "build/artifacts/${{ steps.variables.outputs.artifact-name }}.uf2"
+          elif [ -f build/zephyr/zmk.hex ]
+          then
+            cp build/zephyr/zmk.hex "build/artifacts/${{ steps.variables.outputs.artifact-name }}.hex"
+          fi
+      - name: Archive (${{ steps.variables.outputs.display-name }})
         uses: actions/upload-artifact@v2
         with:
           name: firmware
-          path: dao_left.uf2
-
-      - name: West Build (Dao Right)
-        run: west build -p -s zmk/app -b dao_right -d dao_right -- -DZMK_CONFIG="${GITHUB_WORKSPACE}/config"
-      - name: Dao DTS File
-        if: ${{ always() }}
-        run: cat -n dao_right/zephyr/dao_right.dts.pre.tmp
-      - name: Dao Right Kconfig file
-        run: cat dao_right/zephyr/.config | grep -v "^#" | grep -v "^$"
-      - name: Rename zmk.uf2
-        run: cp dao_right/zephyr/zmk.uf2 dao_right.uf2
-      - name: Archive (Dao Right)
-        uses: actions/upload-artifact@v2
-        with:
-          name: firmware
-          path: dao_right.uf2
+          path: build/artifacts
