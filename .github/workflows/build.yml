@@ -13,6 +13,10 @@ jobs:
       image: zmkfirmware/zmk-build-arm:2.5
     name: Build
     steps:
+      - name: Setup cmake
+        uses: jwlawson/actions-setup-cmake@v1.12
+        with:
+          cmake-version: '3.20.x'
       - name: Checkout
         uses: actions/checkout@v2
       - name: Cache west modules
