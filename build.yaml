@@ -1,0 +1,3 @@
+include:
+  - board: dao_left
+  - board: dao_right
