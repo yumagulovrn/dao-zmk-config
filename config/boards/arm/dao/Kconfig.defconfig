@@ -4,7 +4,7 @@
 if BOARD_DAO_LEFT
 
 	config ZMK_KEYBOARD_NAME
-	default "Dao"
+	default "Daos"
 
     config ZMK_SPLIT_BLE_ROLE_CENTRAL
 	default y
@@ -14,7 +14,7 @@ endif # BOARD_DAO_LEFT
 if BOARD_DAO_RIGHT
 
 	config ZMK_KEYBOARD_NAME
-	default "Dao Right"
+	default "Daos Right"
 
 endif # BOARD_DAO_RIGHT
 
