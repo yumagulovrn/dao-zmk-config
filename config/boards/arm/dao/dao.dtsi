@@ -20,6 +20,7 @@
 		zephyr,flash = &flash0;
 		zmk,kscan = &kscan0;
 		zmk,matrix_transform = &default_transform;
+		zmk,battery = &vbatt;
 	};
 
 	default_transform: keymap_transform_0 {
@@ -52,9 +53,9 @@
 			;
 	};
 
-	vbatt {
+	vbatt: vbatt {
 		compatible = "zmk,battery-voltage-divider";
-		label = "BATTERY";
+		label = "VBATT";
 		io-channels = <&adc 7>; 
 		output-ohms = <2000000>;
 		full-ohms = <(2000000 + 820000)>;
