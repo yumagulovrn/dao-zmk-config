@@ -21,56 +21,56 @@
                 compatible = "zmk,keymap";
 
                 default_layer {
-// -----------------------------------------------------------------------------------------
-// |  GUI |   ~  |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U   |  I  |  O  |  P  |  [   | GUI/] |
-//        | CTRL |  A  |  S  |  D  |  F  |  G  |   |  H  |  J   |  K  |  L  |  ;  |CTRL/'|
-//        | LALT |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M   |  ,  |  .  |  /  | RALT |
-//                           | RSE | SPC | LWR |   | LWR | BKSP | RSE |
+// -----------------------------------------------------------------------------------------------
+// |GUI SLCK|ALT ~|  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U  |  I  |  O  |  P  |RALT [| GUI ] |
+//          |SHFT |  A  |  S  |  D  |  F  |  G  |   |  H  |  J  |  K  |  L  |  ;  |SHFT '|
+//          |CTR \|  Z  |  X  |  C  |  V  |  B  |   |  N  |  M  |  ,  |  .  |  /  |CTRL -|
+//                            | ADJ | RSE | LWR |   | LWR | RSE | ADJ |
                         bindings = <
-   &kp LWIN &kp GRAVE &kp Q &kp W &kp E &kp R &kp T &kp Y         &kp U  &kp I     &kp O   &kp P    &kp LBKT &mt RWIN RBKT
-            &kp LCTRL &kp A &kp S &kp D &kp F &kp G &kp H         &kp J  &kp K     &kp L   &kp SEMI &mt RCTRL SQT
-            &kp LALT  &kp Z &kp X &kp C &kp V &kp B &kp N         &kp M  &kp COMMA &kp DOT &kp FSLH &mt RALT BSLH
-                         &lt RSE TAB &mt LSHFT SPACE &lt LWR RET &lt LWR ESC &mt RSHFT BSPC &lt RSE DEL
+   &mt LWIN SLCK &mt LALT GRAVE &kp Q &kp W &kp E &kp R &kp T &kp Y     &kp U  &kp I     &kp O   &kp P    &mt RALT LBKT   &mt RWIN RBKT
+                 &kp LSHFT      &kp A &kp S &kp D &kp F &kp G &kp H     &kp J  &kp K     &kp L   &kp SEMI &mt RSHFT SQT
+                 &mt LCTRL BSLH &kp Z &kp X &kp C &kp V &kp B &kp N     &kp M  &kp COMMA &kp DOT &kp FSLH &mt RCTRL MINUS
+                               &lt ADJ TAB &lt RSE RET &lt LWR SPACE   &lt LWR BSPC &lt RSE ESC &lt ADJ DEL
                         >;
                 };
                 lower_layer {
-// -----------------------------------------------------------------------------------------
-// |     |  _  |  F1 |  F2 |  F3 |  F4 |  F5 |   |  F6 |  F7 |  F8 |  F9 | F10 | F11 | F12 |
-//       |  +  |  !  |  @  |  #  |  $  |  %  |   |  ^  |  &  |  *  |  (  |  )  |  -  |
-//       |  =  |  1  |  2  |  3  |  4  |  5  |   |  6  |  7  |  8  |  9  |  0  |     |
-//                    | GUI |     | SPC |   | ENT |     | ALT |
+// -----------------------------------------------------------------------------------------------
+// |        |     |  F1 |  F2 |  F3 | F4  |  F5 |   |  F6 |  F7 |  F8 |  F9 | F10 |  F11 |  F12  |
+//          |     | ^+A | INS | DEL |PSCRN|  %  |   |  ←  |  ↓  |  ↑  |  →  |     |↑ BSPC|
+//          |CTR +| ^+Z | ^+X | ^+C | ^+V |^+INS|   |HOME |PG_DN|PG_UP| END |     |^ RET |
+//                            |     |     |     |   |     |     |     |
                         bindings = <
-   &trans &kp UNDER      &kp F1   &kp F2 &kp F3   &kp F4   &kp F5           &kp F6    &kp F7   &kp F8   &kp F9   &kp F10  &kp F11 &mt RGUI F12
-          &mt LCTRL PLUS &kp EXCL &kp AT &kp HASH &kp DLLR &kp PRCNT        &kp CARET &kp AMPS &kp STAR &kp LPAR &kp RPAR &mt RCTRL MINUS
-          &mt LALT EQUAL &kp N1   &kp N2 &kp N3   &kp N4   &kp N5           &kp N6    &kp N7   &kp N8   &kp N9   &kp N0   &trans
-                                              &lt ADJ TAB &trans &trans   &trans &trans &lt ADJ DEL
+   &trans &trans         &kp F1    &kp F2    &kp F3    &kp F4    &kp F5          &kp F6   &kp F7    &kp F8    &kp F9    &kp F10    &kp F11        &mt RGUI F12
+          &trans         &kp LC(A) &kp INS   &kp DEL   &kp PSCRN &kp LS(INS)     &kp LEFT &kp DOWN  &kp UP    &kp RIGHT &kp &trans &mt RSHFT BSPC
+          &mt LCTRL PLUS &kp LC(Z) &kp LC(X) &kp LC(C) &kp LC(V) &kp LC(INS)     &kp HOME &kp PG_DN &kp PG_UP &kp END   &kp &trans &mt RCTRL RET
+                                                         &trans &trans &trans   &trans &trans &trans
                         >;
                 };
 
                 raise_layer {
-// -----------------------------------------------------------------------------------------
-// |     | NMLK |  /  |  7  |  8  |  9  |  -  |   | VOLU| HOME| PRSC| PGUP| SCLK| CLCK|     |
-//       | CTRL |  *  |  4  |  5  |  6  |  +  |   | MUT | LEFT|  UP | RGHT| INS | APP |
-//       |      |  0  |  1  |  2  |  3  |  .  |   | VOLD| END | DOWN| PGDN| PAUS|     |
-//                          |     |     | ADJ |   | ADJ |     |     |
+// -----------------------------------------------------------------------------------------------
+// |        | APP |↑+G+Q|GUI+W|GUI+E|GUI+R|     |   | NRET| 7 & | 8 * | 9 ( | 0 ) |BSPC |GUI NMLK|
+//          |     |     |GUI+S|GUI+D|     |     |   | NUM,| 4 $ | 5 % | 6 ^ | = + | NUM.|
+//          |     |BTCLR| BT0 | BT1 | BT2 | BT3 |   | ? / | 1 ! | 2 @ | 3 # | - _ |     |
+//                            |     |     |     |   |     |     |     |
                         bindings = <
-   &trans &kp KP_NUM      &kp KP_SLASH    &kp KP_N7 &kp KP_N8 &kp KP_N9 &kp KP_MINUS        &kp C_VOL_UP &kp HOME &kp PSCRN &kp PG_UP &kp SLCK &kp CAPS &trans
-          &mt LCTRL EQUAL &kp KP_MULTIPLY &kp KP_N4 &kp KP_N5 &kp KP_N6 &kp KP_PLUS         &kp C_MUTE   &kp LEFT &kp UP    &kp RIGHT &kp INS  &mt RCTRL K_APP
-          &trans          &kp KP_N0       &kp KP_N1 &kp KP_N2 &kp KP_N3 &kp KP_DOT          &kp C_VOL_DN &kp END  &kp DOWN  &kp PG_DN &kp PAUSE_BREAK &trans
-                                                           &trans &trans &lt ADJ RET   &lt ADJ ESC &trans &trans
+   &trans &kp K_APP  &kp LS(RG(Q)) &kp RG(W)    &kp RG(E)    &kp RG(R)    &none            &kp KP_ENTER &kp N7 &kp N8 &kp N9 &kp N0    &kp BSPC        &mt RGUI KP_NUM
+          &trans     &none         &kp RG(S)    &kp RG(D)    &none        &none            &kp KP_COMMA &kp N4 &kp N5 &kp N6 &kp EQUAL &mt RSHFT K_DOT
+          &trans     &bt BT_CLR    &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3     &kp SLASH    &kp N1 &kp N2 &kp N3 &kp MINUS &trans
+                                                              &trans &trans &lt ADJ RET   &lt ADJ ESC &trans &trans
                         >;
                 };
                 adjust_layer {
-// -----------------------------------------------------------------------------------------
-// | RST | BLDR |     |     |     |     |     |   |     |     |     |     |     | BLDR | RST |
-//       | BTCLR| BT0 | BT1 | BT2 | BT3 | BT4 |   | BT4 | BT3 | BT2 | BT1 | BT0 | BTCLR|
-//       |      |     |     |     |     |     |   |     |     |     |     |     |      |
-//                          |     |     |     |   |     |     |     |
+// -----------------------------------------------------------------------------------------------
+// |  RST   |BLDR | ^+Q | ^+W | M+E | M+R | M+T |   | M+Y |     | M+8 |     | M+P | BLDR |  RST  |
+//          |CAPS | M+A | M+S | M+D | M+F |     |   | M+H |     | M+K | M+L | M+; | M+'  |
+//          |     |     | M+X | M+C | M+V | M+6 |   | M+9 | M+0 | M+, | M+. | M+/ | M+-  |
+//                            |     |     |     |   |     |     |     |
                         bindings = <
-   &reset &bootloader  &none        &none        &none        &none        &none              &none        &none        &none        &none        &none         &bootloader &reset
-          &bt BT_CLR   &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4       &bt BT_SEL 4 &bt BT_SEL 3 &bt BT_SEL 2 &bt BT_SEL 1 &bt BT_SEL 0  &bt BT_CLR
-          &none        &none        &none        &none        &none        &none              &none        &none        &none        &none        &none         &none
-                                                                    &trans &none &trans   &trans &none &trans
+   &reset &bootloader &kp RC(Q) &kp RC(W) &kp RA(E) &kp RA(R) &kp RA(T)      &kp RA(Y)  &none      &kp RA(N8)    &none       &kp RA(P)    &bootloader   &reset
+          &kp CAPS    &kp RA(A) &kp RA(S) &kp RA(D) &kp RA(F) &none          &kp RA(H)  &none      &kp RA(K)     &kp RA(L)   &kp RA(SEMI) &kp RA(SQT)
+          &trans      &none     &kp RA(X) &kp RA(C) &kp RA(V) &kp RA(N6)     &kp RA(N9) &kp RA(N0) &kp RA(COMMA) &kp RA(DOT) &kp RA(FSLH) &kp RA(MINUS)
+                                                      &trans &none &trans   &trans &none &trans
                         >;
                 };
         };
