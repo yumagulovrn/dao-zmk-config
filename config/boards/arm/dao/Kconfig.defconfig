@@ -4,25 +4,25 @@
 if BOARD_DAO_LEFT
 
 	config ZMK_KEYBOARD_NAME
-	default "Dao"
+	default "Wisatento"
 
     config ZMK_SPLIT_BLE_ROLE_CENTRAL
 	default y
 
-endif # BOARD_DAO_LEFT
+endif # BOARD_Wisatento_LEFT
 
-if BOARD_DAO_RIGHT
+if BOARD_Wisatento_RIGHT
 
 	config ZMK_KEYBOARD_NAME
-	default "Dao Right"
+	default "Wisatento Right"
 
-endif # BOARD_DAO_RIGHT
+endif # BOARD_Wisatento_RIGHT
 
 
-if BOARD_DAO_LEFT || BOARD_DAO_RIGHT
+if BOARD_Wisatento_LEFT || BOARD_Wisatento_RIGHT
 
 config BOARD
-	default "dao"
+	default "Wisatento"
 
 config ZMK_SPLIT
 	default y
@@ -49,4 +49,4 @@ config USB_DEVICE_STACK
 
 endif # USB
 
-endif # BOARD_DAO_LEFT || BOARD_DAO_RIGHT
+endif # BOARD_Wisatento_LEFT || BOARD_Wisatento_RIGHT
