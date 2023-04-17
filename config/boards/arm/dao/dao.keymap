@@ -17,12 +17,21 @@
 &mt { quick_tap_ms = <200>; };
 
 / {
+    behaviors {
+        td_mt: tap_dance_mod_tap {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TAP_DANCE_MOD_TAP";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp W>, <&kp LGUI(W)>;
+        };
+    };
         keymap {
                 compatible = "zmk,keymap";
 
                 default_layer {
                         bindings = <
-  &none   &mt LGUI RBKT    &kp Q   &kp W   &kp E         &kp R             &kp T         &kp Y         &kp U            &kp I         &kp O     &kp P      &mt LGUI LBKT        &none
+  &none   &mt LGUI RBKT    &kp Q   &td_mt  &kp E         &kp R             &kp T         &kp Y         &kp U            &kp I         &kp O     &kp P      &mt LGUI LBKT        &none
           &mt LALT GRAVE   &kp A   &kp S   &kp D         &kp F             &kp G         &kp H         &kp J            &kp K         &kp L     &kp SEMI   &mt RALT SQT
           &mt LCTRL MINUS  &kp Z   &kp X   &kp C         &kp V             &kp B         &kp N         &kp M            &kp COMMA     &kp DOT   &kp FSLH   &mt RCTRL BSLH
                                             &lt RSE TAB   &mt LSHFT SPACE   &lt LWR RET   &lt LWR ESC   &mt RSHFT BSPC   &lt RSE DEL
