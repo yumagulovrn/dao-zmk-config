@@ -23,7 +23,7 @@
             label = "TAP_DANCE_MOD_TAP";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
-            bindings = <&kp W>, <&kp LGUI(W)>;
+            bindings = <&kp W>, <&kp LG(W)>;
         };
     };
         keymap {
