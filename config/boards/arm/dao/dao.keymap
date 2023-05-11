@@ -9,9 +9,9 @@
 #include <dt-bindings/zmk/bt.h>
 
 #define DEF 0
-#define LWR 1
-#define RSE 2
-#define ADJ 3
+#define NAV 1
+#define SYM 2
+#define FUN 3
 
 &lt { quick_tap_ms = <200>; };
 &mt { quick_tap_ms = <200>; };
@@ -22,36 +22,60 @@
 
                 default_layer {
                         bindings = <
-  &none   &mt LGUI RBKT     &kp Q   &kp W   &kp E         &kp R             &kp T         &kp Y         &kp U            &kp I         &kp O     &kp P      &kp LBKT        &none
-          &mt LCTRL GRAVE   &kp A   &kp S   &kp D         &kp F             &kp G         &kp H         &kp J            &kp K         &kp L     &kp SEMI   &mt RCTRL SQT
-          &mt LALT MINUS    &kp Z   &kp X   &kp C         &kp V             &kp B         &kp N         &kp M            &kp COMMA     &kp DOT   &kp FSLH   &mt RALT BSLH
-                                            &lt RSE TAB   &mt LSHFT SPACE   &lt LWR RET   &lt LWR ESC   &mt RSHFT BSPC   &lt RSE DEL
+        // -------------------------------------------------------------------------------------------------------------------------------------------------- //
+        // | ESC           |  Q    |  W   |  E         |  R          |  T    |---------|  Y          |  U        |  I        |  O    |  P      |   [        | //
+        // | LSHFT TAB     |  A    |  S   |  D         |  F          |  G    |---------|  H          |  J        |  K        |  L    |  ;      | RSHFT "    | //
+        // | LCTRL MENU    |  Z    |  X   |  C         |  V          |  B    |---------|  N          |  M        |  ,        |  .    |  /      | RCTRL BKSP | //
+        //                                |  LGUI      |  NAV SPACE  |  LALT |---------| SYM RET     |  NAV BKSP |  FUN DEL  |                                //
+        // -------------------------------------------------------------------------------------------------------------------------------------------------- //
+  &none   &kp ESC           &kp Q  &kp W  &kp E         &kp R          &kp T            &kp Y        &kp U         &kp I      &kp O   &kp P    &kp LBKT        &none
+          &mt LSHFT TAB     &kp A  &kp S  &kp D         &kp F          &kp G            &kp H        &kp J         &kp K      &kp L   &kp SEMI &mt RSHFT SQT
+          &mt LCTRL C_MENU  &kp Z  &kp X  &kp C         &kp V          &kp B            &kp N        &kp M         &kp COMMA  &kp DOT &kp FSLH &mt RCTRL BSPC
+                                          &kp LEFT_GUI  &lt NAV SPACE  &kp LALT         &lt SYM RET  &lt NAV BSPC  &lt FUN DEL
                         >;
                 };
-                lower_layer {
+                navigation_layer {
                         bindings = <
-  &none   &mt LGUI F1      &kp F2     &kp F3   &kp F4        &kp F5     &kp F6      &kp F7      &kp F8     &kp F9        &kp F10    &kp F11    &kp F12           &none
-          &mt LCTRL PLUS   &kp EXCL   &kp AT   &kp HASH      &kp DLLR   &kp PRCNT   &kp CARET   &kp AMPS   &kp STAR      &kp LPAR   &kp RPAR   &mt RCTRL MINUS
-          &mt LALT EQUAL   &kp N1     &kp N2   &kp N3        &kp N4     &kp N5      &kp N6      &kp N7     &kp N8        &kp N9     &kp N0     &kp RALT
-                                               &lt ADJ TAB   &trans     &trans      &trans      &trans     &lt ADJ DEL
-                        >;
+        // -------------------------------------------------------------------------------------------------------------------------------------------------- //
+        // | ESC    |  1        |  2      |  3          |  4        |  5      |-----------| 6       |  7       |  8       |  9       |  0      | BKSP  |      //
+        // | LSHFT  |  6        |  7      |  8          |  9        |  0      |-----------| LEFT    |  DOWN    |  UP      | RIGHT    |  ESC    | RET   |      //
+        // | LCTRL  |  LC(Z)    |  LC(X)  |  LC(INS)    |  LS(INS)  |  LC(A)  |-----------| HOME    |  PG_DN   |  PG_UP   | END      |  PRCNT  | LCTRL |      //
+        //                                |  LGUI       |  SPACE    |  LALT   |-----------| RET     |  BKSP    |  DEL     |                                   //
+        // -------------------------------------------------------------------------------------------------------------------------------------------------- //
+  &none   &kp ESC    &kp N1     &kp N2     &kp N3        &kp N4       &kp N5               &kp N6    &kp N7     &kp N8     &kp N9     &kp N0    &kp BSPC  &none
+          &kp LSHFT  &kp N6     &kp N7     &kp N8        &kp N9       &kp N0               &kp LEFT  &kp DOWN   &kp UP     &kp RIGHT  &kp ESC   &kp RET
+          &kp LCTRL  &kp LC(Z)  &kp LC(X)  &kp LC(INS)   &kp LS(INS)  &kp LC(A)            &kp HOME  &kp PG_DN  &kp PG_UP  &kp END    &kp PRCNT &kp RCTRL
+                                           &kp LEFT_GUI  &kp SPACE    &kp LALT             &kp RET   &kp BSPC   &kp DEL
+                       >;
                 };
 
-                raise_layer {
+                symbol_layer {
                         bindings = <
-  &none   &mt LGUI KP_NUM   &kp KP_SLASH      &kp KP_N7   &kp KP_N8   &kp KP_N9   &kp KP_MINUS   &kp C_VOL_UP   &kp HOME   &kp PSCRN   &kp PG_UP   &kp SLCK          &kp CLCK           &none
-          &mt LCTRL EQUAL   &kp KP_MULTIPLY   &kp KP_N4   &kp KP_N5   &kp KP_N6   &kp KP_PLUS    &kp C_MUTE     &kp LEFT   &kp UP      &kp RIGHT   &kp INS           &mt RCTRL  K_APP
-          &kp LALT          &kp KP_N0         &kp KP_N1   &kp KP_N2   &kp KP_N3   &kp KP_DOT     &kp C_VOL_DN   &kp END    &kp DOWN    &kp PG_DN   &kp PAUSE_BREAK   &kp RALT
-                                                          &trans      &trans      &lt ADJ RET    &lt ADJ ESC    &trans     &trans
+        // ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- //
+        // | ESC     |  LS(1)      |  LS(2)      |  LS(3)     |  LS(4)      | LS(5) |------------|  LS(6)       |  LS(7)       |  LS(8)      |  LS(9)       |  LS(0)      | BKSP  |  //
+        // | LSHFT   |  BT 1       |  BT 2       |  BT 3      |  BT LOAD    | BT CLR|------------|  -           |  =           | \           |  [           |  ]          | `     |  //
+        // | LCTRL   |  BRIGHT-    |  BRIGHT+    |            |  NUM_LOCK   | PAUSE |------------|  LS(-)       |  LS(=)       | LS(\)       |  LS([)       |  LS(])      | LS(`) |  //
+        //                                       |  LGUI      |  SPACE      | LALT  |------------|              |  BKSP        | DEL         |                                       //
+        // ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- //
+  &none   &kp ESC    &kp LS(N1)    &kp LS(N2)    &kp LS(N3)    &kp LS(N4)    &kp LS(N5)           &kp LS(N6)     &kp LS(N7)     &kp LS(N8)    &kp LS(N9)    &kp LS(N0)    &kp BSPC       &none
+          &kp LSHFT  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bootloader   &bt BT_CLR           &kp MINUS      &kp EQUAL      &kp BSLH      &kp LBKT      &kp RBKT      &kp TILDE
+          &kp LCTRL  &kp C_BRI_UP  &kp C_BRI_DN  &none         &kp KP_NUM    &kp PAUSE_BREAK      &kp LS(MINUS)  &kp LS(EQUAL)  &kp LS(BSLH)  &kp LS(LBKT)  &kp LS(RBKT)  &kp LS(TILDE)
+                                                 &kp LEFT_GUI  &kp SPACE     &kp LALT             &none          &kp BSPC       &kp DEL
                         >;
                 };
-                adjust_layer {
+                func_layer {
                         bindings = <
-  &none   &bootloader   &none          &none          &none          &none          &none          &none          &none          &none          &none          &none          &bootloader   &none
-          &bt BT_CLR    &bt BT_SEL 0   &bt BT_SEL 1   &bt BT_SEL 2   &bt BT_SEL 3   &bt BT_SEL 4   &bt BT_SEL 4   &bt BT_SEL 3   &bt BT_SEL 2   &bt BT_SEL 1   &bt BT_SEL 0   &bt BT_CLR
-          &sys_reset        &none          &none          &none          &none          &none          &none          &none          &none          &none          &none          &sys_reset
-                                                      &trans         &none          &trans         &none          &trans         &trans
-                        >;
+        // ------------------------------------------------------------------------------------------------------------------------------------------------------- //
+        // | ESC     |  F1         |  F2        |  F3        |  F4       | F5    |------------|  NUM LOCK       |         |       |      |  NUM -     |  BKSP   |  //
+        // | LSHFT   |  F6         |  F7        |  F8        |  F9       | F10   |------------|  NUM /          |         |       |      |  NUM +     |  RSHFT  |  //
+        // | LCTRL   |  VOL-       |  VOL+      |  MUTE      |  F11      | F12   |------------|  NUM *          |  ]      |       |      |  NUM RET   |  RCTRL  |  //
+        //                                      |  LGUI      |  SPACE    | LALT  |------------|  RET            |  BKSP   |       |      |                         //
+        // ------------------------------------------------------------------------------------------------------------------------------------------------------- //
+  &none   &kp ESC    &kp F1        &kp F2        &kp F3        &kp F4     &kp F5                &kp KP_NUM       &none     &none   &none  &kp KP_MINUS  &kp BSPC  &none
+          &kp LSHFT  &kp F6        &kp F7        &kp F8        &kp F9     &kp F10               &kp KP_SLASH     &none     &none   &none  &kp KP_PLUS   &kp RSHFT
+          &kp LCTRL  &kp K_VOL_DN  &kp K_VOL_UP  &kp K_MUTE    &kp F11    &kp F12               &kp KP_ASTERISK  &kp RBKT  &none   &none  &kp KP_ENTER  &kp RCTRL
+                                                 &kp LEFT_GUI  &kp SPACE  &kp LALT              &kp RET          &kp BSPC  &none
+                       >;
                 };
         };
 };
