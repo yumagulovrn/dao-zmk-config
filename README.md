@@ -33,7 +33,7 @@ Because of current ZMK limitations, Dao44 keymap is in the branch [dao44](https:
 ### How to change the keymap?
 
 1. Fork the repository https://github.com/yumagulovrn/dao-zmk-config
-2. Make changes to the [dao.keymap](../config/boards/arm/dao/dao.keymap) file in your repository
+2. Make changes to the [dao.keymap](../config/boards/arm/dao/dao.keymap) file in your repository OR use woderfull https://nickcoutsos.github.io/keymap-editor/
 3. Commit changes to your repository
 4. Go to `Actions` tab in your repository
 5. Wait for the GitHub Action to complete
