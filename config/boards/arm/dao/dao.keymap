@@ -18,8 +18,8 @@
 
 / {
     chosen {
-        zmk,matrix_transform = &default_transform;
-        // zmk,matrix_transform = &extra_keys_transform;
+        // zmk,matrix_transform = &default_transform;
+        zmk,matrix_transform = &extra_keys_transform;
     };
 };
 
