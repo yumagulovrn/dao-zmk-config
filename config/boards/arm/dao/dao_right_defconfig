@@ -21,10 +21,6 @@ CONFIG_FLASH=y
 CONFIG_FLASH_PAGE_LAYOUT=y
 CONFIG_FLASH_MAP=y
 
-# Enable external crystal
-CONFIG_CLOCK_CONTROL_NRF_K32SRC_XTAL=y
-CONFIG_CLOCK_CONTROL_NRF_K32SRC_30PPM=y
-
 # # Turn on logging, and set ZMK logging to debug output
 # CONFIG_ZMK_USB_LOGGING=y
 
