@@ -29,17 +29,17 @@
 
                 default_layer {
                         bindings = <
-          &mt LGUI RBKT     &kp Q   &kp W   &kp E         &kp R             &kp T         &kp Y         &kp U            &kp I         &kp O     &kp P      &kp LBKT       
-          &mt LCTRL GRAVE   &kp A   &kp S   &kp D         &kp F             &kp G         &kp H         &kp J            &kp K         &kp L     &kp SEMI   &mt RCTRL SQT
-          &mt LALT MINUS    &kp Z   &kp X   &kp C         &kp V             &kp B         &kp N         &kp M            &kp COMMA     &kp DOT   &kp FSLH   &mt RALT BSLH
-                                            &lt RSE TAB   &mt LSHFT SPACE   &lt LWR RET   &lt LWR ESC   &mt RSHFT BSPC   &lt RSE DEL
+          &mt LGUI LBKT    &kp Q   &kp W   &kp F         &kp P         &kp G             &kp J        &kp L         &kp U         &kp Y     &kp SEMI   &kp RBKT
+          &mt LCTRL PLUS   &kp A   &kp R   &kp S         &kp T         &kp D             &kp H        &kp N         &kp E         &kp I     &kp O      &mt RCTRL SQT
+          &mt LALT MINUS   &kp Z   &kp X   &kp C         &kp V         &kp B             &kp K        &kp M         &kp COMMA     &kp DOT   &kp FSLH   &mt RALT BSLH
+                                            &kp TAB       &lt RSE RET   &mt LSHFT SPACE  &kp BSPC     &lt LWR ESC   &kp DEL
                         >;
                 };
                 lower_layer {
                         bindings = <
-          &mt LGUI F1      &kp F2     &kp F3   &kp F4        &kp F5     &kp F6      &kp F7      &kp F8     &kp F9        &kp F10    &kp F11    &kp F12           
-          &mt LCTRL PLUS   &kp EXCL   &kp AT   &kp HASH      &kp DLLR   &kp PRCNT   &kp CARET   &kp AMPS   &kp STAR      &kp LPAR   &kp RPAR   &mt RCTRL MINUS
-          &mt LALT EQUAL   &kp N1     &kp N2   &kp N3        &kp N4     &kp N5      &kp N6      &kp N7     &kp N8        &kp N9     &kp N0     &kp RALT
+          &mt LGUI GRAVE    &kp N1     &kp N2   &kp N3        &kp N4     &kp N5      &kp N6      &kp N7     &kp N8        &kp N9     &kp N0     &mt RALT MINUS
+          &mt LCTRL &kp F1  &kp F2     &kp F3   &kp F4        &kp F5     &kp F6      &kp F7      &kp F8     &kp F9        &kp F10    &kp F11    &mt RCTRL F12
+          &mt LALT EQUAL    &kp EXCL   &kp AT   &kp HASH      &kp DLLR   &kp PRCNT   &kp CARET   &kp AMPS   &kp STAR      &kp LPAR   &kp RPAR   &kp RALT
                                                &lt ADJ TAB   &trans     &trans      &trans      &trans     &lt ADJ DEL
                         >;
                 };
