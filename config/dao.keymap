@@ -31,24 +31,6 @@
 
 / {
     macros {
-        equals_bigger: equals_bigger {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp EQUAL &kp GT>;
-            label = "EQUALS_BIGGER";
-        };
-        euro: euro {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp LA(KP_N0) &kp LA(KP_N1) &kp LA(KP_N2) &kp LA(KP_N3)>;
-            label = "EURO";
-        };
-        email: email {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp L &kp E &kp C &kp H &kp U &kp C &kp K &kp T &kp H &kp E &kp P &kp I &kp R &kp A &kp T &kp E &kp AT &kp G &kp M &kp A &kp I &kp L &kp DOT &kp C &kp O &kp M>;
-            label = "EMAIL";
-        };
     };
 
     keymap {
@@ -74,10 +56,10 @@
 
         raise_layer {
             bindings = <
-&trans  &kp EXCL  &kp AT  &kp HASH   &kp DOLLAR      &kp PERCENT  &kp CARET        &kp AMPERSAND  &kp ASTERISK      &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &trans
-&trans  &euro     &email  &kp KP_N5  &equals_bigger  &kp KP_PLUS  &kp KP_SUBTRACT  &kp KP_EQUAL   &kp LEFT_BRACKET  &kp RIGHT_BRACKET     &kp BACKSLASH          &mt RCTRL GRAVE
-&trans  &none     &none   &none      &none           &none        &kp UNDERSCORE   &kp PLUS       &kp LEFT_BRACE    &kp RIGHT_BRACE       &kp PIPE               &kp TILDE
-                          &trans     &trans          &trans       &trans           &trans         &trans
+&trans  &kp EXCL  &kp AT  &kp HASH  &kp DOLLAR  &kp PERCENT  &kp CARET        &kp AMPERSAND  &kp ASTERISK      &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &trans
+&trans  &none     &none   &none     &none       &none        &kp KP_SUBTRACT  &kp KP_EQUAL   &kp LEFT_BRACKET  &kp RIGHT_BRACKET     &kp BACKSLASH          &mt RCTRL GRAVE
+&trans  &none     &none   &none     &none       &none        &kp UNDERSCORE   &kp PLUS       &kp LEFT_BRACE    &kp RIGHT_BRACE       &kp PIPE               &kp TILDE
+                          &trans    &trans      &trans       &trans           &trans         &trans
             >;
         };
 
