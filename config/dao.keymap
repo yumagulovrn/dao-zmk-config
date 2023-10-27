@@ -31,6 +31,24 @@
 
 / {
     macros {
+        email1: email1 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp L &kp E &kp C &kp H &kp U &kp C &kp K &kp T &kp H &kp E &kp P &kp I &kp R &kp A &kp T &kp E &kp AT &kp G &kp M &kp A &kp I &kp L &kp DOT &kp C &kp O &kp M>;
+            label = "EMAIL1";
+        };
+        email2: email2 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp J &kp O &kp A &kp N &kp DOT &kp V &kp I &kp L &kp A &kp R &kp I &kp N &kp O &kp AT &kp G &kp M &kp A &kp I &kp L &kp DOT &kp C &kp O &kp M>;
+            label = "EMAIL2";
+        };
+        lambda_sign: lambda_sign {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp EQUAL &kp GT>;
+            label = "LAMBDA_SIGN";
+        };
     };
 
     keymap {
@@ -56,10 +74,10 @@
 
         raise_layer {
             bindings = <
-&trans  &kp EXCL  &kp AT  &kp HASH  &kp DOLLAR  &kp PERCENT  &kp CARET        &kp AMPERSAND  &kp ASTERISK      &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &trans
-&trans  &none     &none   &none     &none       &none        &kp KP_SUBTRACT  &kp KP_EQUAL   &kp LEFT_BRACKET  &kp RIGHT_BRACKET     &kp BACKSLASH          &mt RCTRL GRAVE
-&trans  &none     &none   &none     &none       &none        &kp UNDERSCORE   &kp PLUS       &kp LEFT_BRACE    &kp RIGHT_BRACE       &kp PIPE               &kp TILDE
-                          &trans    &trans      &trans       &trans           &trans         &trans
+&trans  &kp EXCL        &kp AT   &kp HASH  &kp DOLLAR    &kp PERCENT  &kp CARET        &kp AMPERSAND  &kp ASTERISK      &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &trans
+&trans  &kp RA(RC(N5))  &email1  &email2   &lambda_sign  &none        &kp KP_SUBTRACT  &kp KP_EQUAL   &kp LEFT_BRACKET  &kp RIGHT_BRACKET     &kp BACKSLASH          &mt RCTRL GRAVE
+&trans  &none           &none    &none     &none         &none        &kp UNDERSCORE   &kp PLUS       &kp LEFT_BRACE    &kp RIGHT_BRACE       &kp PIPE               &kp TILDE
+                                 &trans    &trans        &trans       &trans           &trans         &trans
             >;
         };
 
