@@ -49,6 +49,21 @@
             bindings = <&kp EQUAL &kp GT>;
             label = "LAMBDA_SIGN";
         };
+        enye: enye {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp TILDE &kp N>;
+            label = "ENYE";
+        };
+    };
+
+    behaviors {
+        enye_tapdance: enye_tapdance {
+            compatible = "zmk,behavior-tap-dance";
+            label = "ENYE_TAPDANCE";
+            #binding-cells = <0>;
+            bindings = <&kp SEMICOLON>, <&enye>;
+        };
     };
 
     keymap {
