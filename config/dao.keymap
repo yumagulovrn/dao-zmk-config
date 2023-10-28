@@ -66,6 +66,15 @@
         };
     };
 
+    combos {
+        compatible = "zmk,combos";
+
+        special_layer {
+            bindings = <&mo 3>;
+            key-positions = <37 40>;
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
