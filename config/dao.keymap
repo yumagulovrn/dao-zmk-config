@@ -68,11 +68,6 @@
 
     combos {
         compatible = "zmk,combos";
-
-        special_layer {
-            bindings = <&mo 3>;
-            key-positions = <37 40>;
-        };
     };
 
     keymap {
@@ -112,6 +107,15 @@
 &sys_reset   &none         &none         &none         &none         &none         &kp K_PLAY_PAUSE  &kp K_STOP  &kp C_VOLUME_DOWN  &none  &none  &none
                                          &trans        &none         &trans        &trans            &none       &trans
             >;
+        };
+    };
+
+    conditional_layers {
+        compatible = "zmk,conditional-layers";
+
+        tri-layer {
+            if-layers = <1 2>;
+            then-layer = <3>;
         };
     };
 };
