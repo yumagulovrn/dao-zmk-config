@@ -68,6 +68,11 @@
 
     combos {
         compatible = "zmk,combos";
+
+        toggle_game {
+            bindings = <&tog 4>;
+            key-positions = <0 11 37 40>;
+        };
     };
 
     keymap {
@@ -103,7 +108,7 @@
         adjust_layer {
             bindings = <
 &bootloader  &none         &none         &none         &none         &none           &none             &none       &none              &none           &none       &bootloader
-&bt BT_CLR   &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4    &tog 4            &none       &kp C_VOLUME_UP    &none           &none       &none
+&bt BT_CLR   &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4    &none             &none       &kp C_VOLUME_UP    &none           &none       &none
 &sys_reset   &none         &none         &none         &none         &kp KP_NUMLOCK  &kp K_PLAY_PAUSE  &kp K_STOP  &kp C_VOLUME_DOWN  &kp K_PREVIOUS  &kp K_NEXT  &sys_reset
                                          &trans        &none         &trans          &trans            &none       &trans
             >;
@@ -111,9 +116,9 @@
 
         game_layer {
             bindings = <
-&kp TAB    &kp Q  &kp W  &kp E   &kp R   &kp T   &kp Y   &kp U   &kp I      &kp O    &kp P     &kp BSPC
-&kp LCTRL  &kp A  &kp S  &kp D   &kp F   &kp G   &kp H   &kp J   &kp K      &kp L    &kp SEMI  &kp APOS
-&kp LSHFT  &kp Z  &kp X  &kp C   &kp V   &kp B   &kp N   &kp M   &kp COMMA  &kp DOT  &kp FSLH  &kp ENTER
+&kp TAB    &kp Q  &kp W  &kp E   &kp R   &kp T   &trans  &trans  &trans  &kp O    &kp P     &kp BSPC
+&kp LCTRL  &kp A  &kp S  &kp D   &kp F   &kp G   &trans  &trans  &trans  &kp L    &kp SEMI  &kp APOS
+&kp LSHFT  &kp Z  &kp X  &kp C   &kp V   &kp B   &trans  &trans  &trans  &kp DOT  &kp FSLH  &kp ENTER
                          &trans  &trans  &trans  &trans  &trans  &trans
             >;
 
