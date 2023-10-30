@@ -93,18 +93,18 @@
 
         raise_layer {
             bindings = <
-&trans  &kp EXCL    &kp AT   &kp HASH  &kp DOLLAR    &kp PERCENT  &kp CARET        &kp AMPERSAND  &kp ASTERISK      &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &trans
-&trans  &kp RA(N5)  &email1  &email2   &lambda_sign  &none        &kp KP_SUBTRACT  &kp KP_EQUAL   &kp LEFT_BRACKET  &kp RIGHT_BRACKET     &kp BACKSLASH          &mt RCTRL GRAVE
-&trans  &none       &none    &none     &none         &none        &kp UNDERSCORE   &kp PLUS       &kp LEFT_BRACE    &kp RIGHT_BRACE       &kp PIPE               &kp TILDE
-                             &trans    &trans        &trans       &trans           &trans         &trans
+&trans  &kp EXCL    &kp AT   &kp HASH  &kp DOLLAR    &kp PERCENT  &kp CARET       &kp AMPERSAND  &kp ASTERISK      &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &trans
+&trans  &kp RA(N5)  &email1  &email2   &lambda_sign  &none        &kp MINUS       &kp EQUAL      &kp LEFT_BRACKET  &kp RIGHT_BRACKET     &kp BACKSLASH          &mt RCTRL GRAVE
+&trans  &none       &none    &none     &none         &none        &kp UNDERSCORE  &kp PLUS       &kp LEFT_BRACE    &kp RIGHT_BRACE       &kp PIPE               &kp TILDE
+                             &trans    &trans        &trans       &trans          &trans         &trans
             >;
         };
 
         adjust_layer {
             bindings = <
-&bootloader  &none         &none         &none         &none         &none         &none             &none       &none              &none  &none  &none
-&bt BT_CLR   &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4  &none             &none       &kp C_VOLUME_UP    &none  &none  &none
-&sys_reset   &none         &none         &none         &none         &none         &kp K_PLAY_PAUSE  &kp K_STOP  &kp C_VOLUME_DOWN  &none  &none  &none
+&bootloader  &none         &none         &none         &none         &none         &none             &none       &none              &none           &none       &bootloader
+&bt BT_CLR   &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4  &none             &none       &kp C_VOLUME_UP    &none           &none       &none
+&sys_reset   &none         &none         &none         &none         &none         &kp K_PLAY_PAUSE  &kp K_STOP  &kp C_VOLUME_DOWN  &kp K_PREVIOUS  &kp K_NEXT  &sys_reset
                                          &trans        &none         &trans        &trans            &none       &trans
             >;
         };
