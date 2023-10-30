@@ -84,10 +84,10 @@
 
         lower_layer {
             bindings = <
-&kp ESCAPE  &kp F1           &kp F2     &kp F3         &kp F4   &kp F5   &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &kp KP_DOT  &kp KP_COMMA    &kp DELETE
-&trans      &kp F6           &kp F7     &kp F8         &kp F9   &kp F10  &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6  &kp HOME    &kp UP_ARROW    &kp END
-&trans      &kp PRINTSCREEN  &kp PG_UP  &kp PAGE_DOWN  &kp F11  &kp F12  &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &kp LEFT    &kp DOWN_ARROW  &kp RIGHT
-                                        &trans         &trans   &trans   &kp KP_NUMBER_0  &trans           &trans
+&kp ESCAPE  &kp F1           &kp F2     &kp F3         &kp F4   &kp F5   &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp DOT   &kp COMMA       &kp DELETE
+&trans      &kp F6           &kp F7     &kp F8         &kp F9   &kp F10  &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &kp HOME  &kp UP_ARROW    &kp END
+&trans      &kp PRINTSCREEN  &kp PG_UP  &kp PAGE_DOWN  &kp F11  &kp F12  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp LEFT  &kp DOWN_ARROW  &kp RIGHT
+                                        &trans         &trans   &trans   &kp NUMBER_0  &trans        &trans
             >;
         };
 
