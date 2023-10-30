@@ -116,13 +116,13 @@
 
         game_layer {
             bindings = <
-&kp TAB    &kp Q  &kp W  &kp E   &kp R   &kp T   &trans  &trans  &trans  &kp O    &kp P     &kp BSPC
-&kp LCTRL  &kp A  &kp S  &kp D   &kp F   &kp G   &trans  &trans  &trans  &kp L    &kp SEMI  &kp APOS
-&kp LSHFT  &kp Z  &kp X  &kp C   &kp V   &kp B   &trans  &trans  &trans  &kp DOT  &kp FSLH  &kp ENTER
-                         &trans  &trans  &trans  &trans  &trans  &trans
+&trans      &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&kp LCTRL   &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&kp LSHIFT  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &kp ENTER
+                            &trans  &trans  &trans  &trans  &trans  &trans
             >;
 
-            label = "game_layer";
+            label = "GAME_LAYER";
         };
     };
 
