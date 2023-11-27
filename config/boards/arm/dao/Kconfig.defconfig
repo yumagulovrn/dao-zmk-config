@@ -3,10 +3,13 @@
 
 if BOARD_DAO_LEFT
 
-	config ZMK_KEYBOARD_NAME
+    config ZMK_KEYBOARD_NAME
 	default "Dao"
 
     config ZMK_SPLIT_BLE_ROLE_CENTRAL
+	default y
+
+    config ZMK_USB
 	default y
 
 endif # BOARD_DAO_LEFT
@@ -23,6 +26,9 @@ config BT_CTLR
 	default BT
 
 config ZMK_BATTERY_VOLTAGE_DIVIDER
+	default y
+
+config ZMK_BLE
 	default y
 
 if USB
