@@ -1,3 +1,4 @@
 include:
   - board: dao_left
   - board: dao_right
+    shield: settings_reset
