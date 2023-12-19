@@ -30,15 +30,25 @@
 };
 
 / {
+    behaviors {
+        copy_past_c: copy_past_c {
+            compatible = "zmk,behavior-tap-dance";
+            label = "COPY_PAST_C";
+            #binding-cells = <0>;
+            bindings = <&kp LG(C)>;
+            tapping-term-ms = <180>;
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
         default_layer {
             bindings = <
-&mt LGUI RBKT    &kp Q  &kp W  &kp E        &kp R            &kp T        &kp Y        &kp U           &kp I        &kp O    &kp P     &mt RGUI LBKT
-&mt LCTRL GRAVE  &kp A  &kp S  &mt LGUI D   &kp F            &kp G        &kp H        &kp J           &mt RGUI K   &kp L    &kp SEMI  &mt RCTRL SQT
-&mt LALT MINUS   &kp Z  &kp X  &kp C        &kp V            &kp B        &kp N        &kp M           &kp COMMA    &kp DOT  &kp FSLH  &mt RALT BSLH
-                               &lt RSE TAB  &mt LSHFT SPACE  &lt LWR RET  &lt LWR ESC  &mt RSHFT BSPC  &lt RSE DEL
+&mt LGUI RBKT    &kp Q  &kp W  &kp E         &kp R            &kp T        &kp Y        &kp U           &kp I        &kp O    &kp P     &mt RGUI LBKT
+&mt LCTRL GRAVE  &kp A  &kp S  &mt LGUI D    &kp F            &kp G        &kp H        &kp J           &mt RGUI K   &kp L    &kp SEMI  &mt RCTRL SQT
+&mt LALT MINUS   &kp Z  &kp X  &copy_past_c  &kp V            &kp B        &kp N        &kp M           &kp COMMA    &kp DOT  &kp FSLH  &mt RALT BSLH
+                               &lt RSE TAB   &mt LSHFT SPACE  &lt LWR RET  &lt LWR ESC  &mt RSHFT BSPC  &lt RSE DEL
             >;
         };
 
