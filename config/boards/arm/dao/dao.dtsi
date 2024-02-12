@@ -11,7 +11,7 @@
 
 
 / {
-	model = "dao";
+	model = "Dao";
 	compatible = "dao";
 
 	chosen {
@@ -71,6 +71,13 @@
 			;
 	};
 
+    leds {
+        compatible = "gpio-leds";
+        blue_led: led_0 {
+            gpios = <&gpio1 15 GPIO_ACTIVE_HIGH>;
+        };
+    };
+
 	vbatt: vbatt {
 		compatible = "zmk,battery-voltage-divider";
 		label = "VBATT";
@@ -101,17 +108,6 @@
 &usbd {
 	status = "okay";
 };
-
-&uart0 {
-	compatible = "nordic,nrf-uarte";
-	status = "okay";
-	current-speed = <115200>;
-	tx-pin = <19>;
-	rx-pin = <21>;
-	rts-pin = <23>;
-	cts-pin = <25>;
-};
-
 
 &flash0 {
 	/*
