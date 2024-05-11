@@ -8,11 +8,6 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
 
-#define DEF 0
-#define LWR 1
-#define RSE 2
-#define ADJ 3
-
 &lt { quick_tap_ms = <200>; };
 &mt { quick_tap_ms = <200>; };
 
@@ -31,7 +26,7 @@
 &none       &kp Q       &kp W       &kp F       &kp P       &kp G               &kp J       &kp L       &kp U       &kp Y       &kp P       &none
 &none       &kp A       &kp R       &kp S       &kp T       &kp D               &kp H       &kp N       &kp E       &kp I       &kp O       &none
 &none       &kp Z       &kp X       &kp C       &kp V       &kp B               &kp K       &kp M       &none       &none       &none       &none
-                                    &none       &none       &none               &none       &none       &none
+                                    &none       &none       &kp SPACE           &kp RET     &none       &none
                         >;
                 };
         };
