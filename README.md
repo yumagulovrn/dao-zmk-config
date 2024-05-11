@@ -2,8 +2,6 @@
 
 This is a repository for a ZMK Firmware for dao42 keyboards.
 
-* [main](https://github.com/yumagulovrn/dao-zmk-config/tree/main) branch is for Dao42
-
 ## Default keymap
 
 ### Dao42
