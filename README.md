@@ -1,9 +1,8 @@
 # ZMK Firmware for Dao keyboard
 
-This is a repository for a ZMK Firmware for both Dao42 and Dao44 keyboards.
+This is a repository for a ZMK Firmware for dao42 keyboards.
 
 * [main](https://github.com/yumagulovrn/dao-zmk-config/tree/main) branch is for Dao42
-* [dao44](https://github.com/yumagulovrn/dao-zmk-config/tree/dao44) branch is, obviously, for Dao44
 
 ## Default keymap
 
