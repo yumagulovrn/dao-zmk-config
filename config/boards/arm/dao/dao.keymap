@@ -28,7 +28,7 @@
 &none       &kp Z       &kp X       &kp C       &kp V       &kp B               &kp K       &kp M       &kp DOT     &kp COMMA   &none       &none
                                     &none       &none       &lt NAV BSPC        &kp SPACE   &kp RET     &none
                         >;
-                },
+                };
 
                 nav_layer {
                         bindings = <
