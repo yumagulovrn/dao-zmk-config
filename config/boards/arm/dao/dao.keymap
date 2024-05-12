@@ -1,33 +1,50 @@
-/*
- * Copyright (c) 2021 Rafael Yumagulov
- *
- * SPDX-License-Identifier: MIT
- */
+// TODO: Numbers
+// TODO: Functions
 
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
+
+#define DEFAULT 0
+#define NAV 1
 
 &lt { quick_tap_ms = <200>; };
 &mt { quick_tap_ms = <200>; };
 
 / {
     chosen {
-        zmk,matrix_transform = &default_transform;
+        zmk,																			\tmatrix_transform = &default_transform;
     };
 };
 
 / {
         keymap {
-                compatible = "zmk,keymap";
+                compatible = "zmk,																			\tkeymap";
 
                 default_layer {
                         bindings = <
 &none       &kp Q       &kp W       &kp F       &kp P       &kp G               &kp J       &kp L       &kp U       &kp Y       &kp P       &none
 &none       &kp A       &kp R       &kp S       &kp T       &kp D               &kp H       &kp N       &kp E       &kp I       &kp O       &none
-&none       &kp Z       &kp X       &kp C       &kp V       &kp B               &kp K       &kp M       &none       &none       &none       &none
-                                    &none       &none       &kp SPACE           &kp RET     &none       &none
+&none       &kp Z       &kp X       &kp C       &kp V       &kp B               &kp K       &kp M       &kp DOT     &kp COMMA   &none       &none
+                                    &none       &none       &lt NAV BSPC        &kp SPACE   &kp RET     &none
+                        >;
+                };
+
+                nav_layer {
+                        bindings = <
+&none       &none       &none       &none       &none       &none               &none       &none       &kp UP       &none       &none       &none
+&none       &none       &none       &none       &none       &none               &none       &kp LEFT    &kp DOWN     &kp RIGHT   &none       &none
+&none       &none       &none       &none       &none       &none               &none       &none       &none        &none       &none       &none
+                                    &none       &none       &none               &none       &none       &none
                         >;
                 };
         };
 };
+
+
+// Good keys:
+// Index and middle combo on home row
+// And the same on the rows above and below
+// Same for middle and ring
+// Index on home and middle on row above
+// Any combination of thumb keys (one of each hands)
