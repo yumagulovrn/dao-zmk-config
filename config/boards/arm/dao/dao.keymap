@@ -24,6 +24,7 @@
                         quick-tap-ms = <0>;
                         bindings = <&kp>, <&kp>;
                         hold-trigger-key-positions = <6 7 8 9 10 11 18 19 20 21 22 23 30 31 32 33 34 35 39 40 41>;
+                        hold-trigger-on-release;
                 };
                 rpht: right_positional_hold_tap {
                         compatible = "zmk,behavior-hold-tap";
@@ -33,6 +34,7 @@
                         quick-tap-ms = <0>;
                         bindings = <&kp>, <&kp>;
                         hold-trigger-key-positions = <0 1 2 3 4 5 12 13 14 15 16 17 24 25 26 27 28 29 36 37 38 39>;
+                        hold-trigger-on-release;
                 };
         };
 
@@ -41,7 +43,7 @@
 
                 default_layer {
                         bindings = <
-&none         &kp Q         &kp W         &kp F         &kp P         &kp G                   &kp J         &kp L         &kp U         &kp Y         &kp P         &none
+&kp ESC       &kp Q         &kp W         &kp F         &kp P         &kp G                   &kp J         &kp L         &kp U         &kp Y         &kp P         &none
 &none         &lpht LCMD A  &lpht LALT R  &lpht LCTRL S &lpht LSHFT T &kp D                   &kp H         &rpht LSHFT N &rpht LCTRL E &rpht LALT I  &rpht LCMD O  &none
 &none         &kp Z         &kp X         &kp C         &kp V         &kp B                   &kp K         &kp M         &kp DOT       &kp COMMA     &none         &none
                                           &kp TAB       &mo NAV       &kp BSPC                &kp SPACE     &kp RET       &none
@@ -51,7 +53,7 @@
                 nav_layer {
                         bindings = <
 &none         &none         &none         &none         &none         &none                   &none         &none         &kp UP         &none         &none         &none
-&none         &none         &none         &none         &none         &none                   &none         &kp LEFT      &kp DOWN       &kp RIGHT     &none         &none
+&none         &none         &none         &none         &none         &none                   &none         &kp LEFT      &kp RIGHT      &kp UP        &kp DOWN         &none
 &none         &none         &none         &none         &none         &none                   &none         &none         &none          &none         &none         &none
                                           &none         &none         &none                   &none         &none         &none
                         >;
