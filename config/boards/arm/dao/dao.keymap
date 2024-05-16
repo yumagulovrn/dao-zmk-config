@@ -5,6 +5,10 @@
 #define DEFAULT 0
 #define NAV 1
 
+#define KEYS_L 0 1 2 3 4 5 12 13 14 15 16 23 24 25 26 27 28
+#define KEYS_R 6 7 8 9 10 11 17 18 19 20 21 22 29 30 31 32 33 34 35
+#define KEYS_T 36 37 38 39 40 41
+
 &lt { quick_tap_ms = <200>; };
 &mt { quick_tap_ms = <200>; };
 
@@ -20,20 +24,20 @@
                         compatible = "zmk,behavior-hold-tap";
                         #binding-cells = <2>;
                         flavor = "balanced";
-                        tapping-term-ms = <1000>;
+                        tapping-term-ms = <500>;
                         quick-tap-ms = <0>;
                         bindings = <&kp>, <&kp>;
-                        hold-trigger-key-positions = <6 7 8 9 10 11 18 19 20 21 22 23 30 31 32 33 34 35 39 40 41>;
+                        hold-trigger-key-positions = <KEYS_R KEYS_T>;
                         hold-trigger-on-release;
                 };
                 rpht: right_positional_hold_tap {
                         compatible = "zmk,behavior-hold-tap";
                         #binding-cells = <2>;
                         flavor = "balanced";
-                        tapping-term-ms = <1000>;
+                        tapping-term-ms = <500>;
                         quick-tap-ms = <0>;
                         bindings = <&kp>, <&kp>;
-                        hold-trigger-key-positions = <0 1 2 3 4 5 12 13 14 15 16 17 24 25 26 27 28 29 36 37 38 39>;
+                        hold-trigger-key-positions = <KEYS_L KEYS_T>;
                         hold-trigger-on-release;
                 };
         };
