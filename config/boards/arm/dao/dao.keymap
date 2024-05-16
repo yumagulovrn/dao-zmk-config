@@ -44,7 +44,7 @@
 &none         &kp Q         &kp W         &kp F         &kp P         &kp G                   &kp J         &kp L         &kp U         &kp Y         &kp P         &none
 &none         &lpht LCMD A  &lpht LALT R  &lpht LCTRL S &lpht LSHFT T &lpht D                 &kp H         &rpht LSHFT N &rpht LCTRL E &rpht LALT I  &rpht LCMD O  &none
 &none         &kp Z         &kp X         &kp C         &kp V         &kp B                   &kp K         &kp M         &kp DOT       &kp COMMA     &none         &none
-                                          &mo TAB       &mo NAV       &kp BSPC                &kp SPACE     &kp RET       &none
+                                          &kp TAB       &mo NAV       &kp BSPC                &kp SPACE     &kp RET       &none
                         >;
                 };
 
