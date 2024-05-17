@@ -9,7 +9,10 @@
 #define KEYS_R 6 7 8 9 10 11 17 18 19 20 21 22 29 30 31 32 33 34 35
 #define KEYS_T 36 37 38 39 40 41
 
-&lt { quick_tap_ms = <200>; };
+&lt {
+    quick_tap_ms = <200>;
+    flavor = "hold-preferred";
+};
 &mt { quick_tap_ms = <200>; };
 
 / {
@@ -50,7 +53,7 @@
 &kp ESC       &kp Q         &kp W         &kp F         &kp P         &kp G                   &kp J         &kp L         &kp U         &kp Y         &kp P         &none
 &lpht LWIN    &lpht LCMD A  &lpht LALT R  &lpht LCTRL S &lpht LSHFT T &kp D                   &kp H         &rpht LSHFT N &rpht LCTRL E &rpht LALT I  &rpht LCMD O  &rpht LWIN
 &none         &kp Z         &kp X         &kp C         &kp V         &kp B                   &kp K         &kp M         &kp DOT       &kp COMMA     &none         &none
-                                          &kp TAB       &mo NAV       &kp BSPC                &kp SPACE     &kp RET       &none
+                                          &kp TAB       &lt NAV LSHFT       &kp BSPC                &kp SPACE     &kp RET       &none
                         >;
                 };
 
