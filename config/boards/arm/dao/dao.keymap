@@ -11,7 +11,7 @@
 
 &lt {
     quick_tap_ms = <200>;
-    //flavor = "hold-preferred";
+    flavor = "hold-preferred";
 };
 &mt { quick_tap_ms = <200>; };
 
@@ -43,6 +43,30 @@
                         hold-trigger-key-positions = <KEYS_L KEYS_T>;
                         hold-trigger-on-release;
                 };
+        };
+
+        combos {
+            compatible = "zmk,combos";
+            combo_paste {
+                timeout-ms = <30>;
+                key-positions = <3 4>;
+                bindings = <&kp LC(V)>;
+            };
+            combo_copy {
+                timeout-ms = <30>;
+                key-positions = <26 27>;
+                bindings = <&kp LC(C)>;
+            };
+            combo_undo {
+                timeout-ms = <30>;
+                key-positions = <25 26>;
+                bindings = <&kp LC(Z)>;
+            };
+            combo_redo {
+                timeout-ms = <30>;
+                key-positions = <2 3>;
+                bindings = <&kp LC(Y)>;
+            };
         };
 
         keymap {
