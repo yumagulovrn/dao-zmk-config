@@ -54,28 +54,18 @@
             };
             combo_copy {
                 timeout-ms = <30>;
-                key-positions = <14 15>;
-                bindings = <&kp LC(C)>;
-            };
-            combo_cut {
-                timeout-ms = <30>;
                 key-positions = <26 27>;
-                bindings = <&kp LC(X)>;
+                bindings = <&kp LC(C)>;
             };
             combo_undo {
                 timeout-ms = <30>;
-                key-positions = <13 14>;
+                key-positions = <25 26>;
                 bindings = <&kp LC(Z)>;
             };
             combo_redo {
                 timeout-ms = <30>;
                 key-positions = <2 3>;
                 bindings = <&kp LC(Y)>;
-            };
-            combo_redo2 {
-                timeout-ms = <30>;
-                key-positions = <2 3>;
-                bindings = <&kp LS(LC(Z))>;
             };
         };
 
@@ -87,7 +77,7 @@
 &kp ESC       &kp Q         &kp W         &kp F         &kp P         &kp G                   &kp J         &kp L         &kp U         &kp Y         &kp P         &none
 &lpht LWIN    &lpht LCMD A  &lpht LALT R  &lpht LCTRL S &lpht LSHFT T &kp D                   &kp H         &rpht LSHFT N &rpht LCTRL E &rpht LALT I  &rpht LCMD O  &rpht LWIN
 &none         &kp Z         &kp X         &kp C         &kp V         &kp B                   &kp K         &kp M         &kp DOT       &kp COMMA     &none         &none
-                                          &kp TAB       &lt NAV LSHFT       &kp BSPC                &kp SPACE     &kp RET       &none
+                                          &kp TAB       &lt NAV LSHFT &kp BSPC                &kp SPACE     &kp RET       &none
                         >;
                 };
 
