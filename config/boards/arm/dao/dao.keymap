@@ -163,7 +163,7 @@
                         bindings = <
 &kp ESC        &kp Q         &kp W         &kp F         &kp P         &kp G                   &kp J         &kp L         &kp U         &kp Y         &kp P         &kp ESC
 &lpht LWIN F12 &lpht LCMD A  &lpht LALT R  &lpht LCTRL S &lpht LSHFT T &kp D                   &kp H         &rpht LSHFT N &rpht LCTRL E &rpht LALT I  &rpht LCMD O  &rpht LWIN ESC
-&kp GRAVE      &kp Z         &kp X         &kp C         &kp V         &kp B                   &kp K         &kp M         &doco         &cose         &quex         &KP ESC
+&kp GRAVE      &kp Z         &kp X         &kp C         &kp V         &kp B                   &kp K         &kp M         &doco         &cose         &quex         &kp ESC
                                            &lt NAV LSHFT &kp TAB       &bade                   &kp SPACE     &kp RET       &lt NUM LCTRL
                         >;
                 };
@@ -172,7 +172,7 @@
                         bindings = <
 &none         &none         &none         &none         &none         &none                   &none         &kp C_PP      &kp C_VOL_DN   &kp C_VOL_UP  &kp C_MUTE    &kp PSCRN
 &none         &kp LCMD      &kp LALT      &kp LCTRL     &kp LSHFT     &none                   &none         &kp LEFT      &kp RIGHT      &kp UP        &kp DOWN      &none
-&none         &none         &none         &none         &none         &none                   &KP AT        &kp EQUAL     &kp HASH       &kp DLLR      &kp PRCNT     &kp TILDE
+&none         &none         &none         &none         &none         &none                   &kp AT        &kp EQUAL     &kp HASH       &kp DLLR      &kp PRCNT     &kp TILDE
                                           &none         &none         &none                   &none         &none         &none
                         >;
                 };
