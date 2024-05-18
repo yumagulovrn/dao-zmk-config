@@ -47,32 +47,32 @@
 
         combos {
             compatible = "zmk,combos";
-            combo_esc {
+            combo_paste {
                 timeout-ms = <30>;
                 key-positions = <3 4>;
                 bindings = <&kp LC(V)>;
             };
-            combo_esc {
+            combo_copy {
                 timeout-ms = <30>;
                 key-positions = <14 15>;
                 bindings = <&kp LC(C)>;
             };
-            combo_esc {
+            combo_cut {
                 timeout-ms = <30>;
                 key-positions = <26 27>;
                 bindings = <&kp LC(X)>;
             };
-            combo_esc {
+            combo_undo {
                 timeout-ms = <30>;
                 key-positions = <13 14>;
                 bindings = <&kp LC(Z)>;
             };
-            combo_esc {
+            combo_redo {
                 timeout-ms = <30>;
                 key-positions = <2 3>;
                 bindings = <&kp LC(Y)>;
             };
-            combo_esc {
+            combo_redo2 {
                 timeout-ms = <30>;
                 key-positions = <2 3>;
                 bindings = <&kp LS(LC(Z))>;
