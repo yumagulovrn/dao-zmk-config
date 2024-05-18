@@ -11,7 +11,7 @@
 
 &lt {
     quick_tap_ms = <200>;
-    flavor = "hold-preferred";
+    //flavor = "hold-preferred";
 };
 &mt { quick_tap_ms = <200>; };
 
