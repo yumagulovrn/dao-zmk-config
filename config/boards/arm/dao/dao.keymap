@@ -9,60 +9,87 @@
 #define KEYS_R 6 7 8 9 10 11 17 18 19 20 21 22 29 30 31 32 33 34 35
 #define KEYS_T 36 37 38 39 40 41
 
-&lt { quick_tap_ms = <200>; };
+&lt {
+    quick_tap_ms = <200>;
+    flavor = "hold-preferred";
+};
 &mt { quick_tap_ms = <200>; };
 
 / {
-chosen {
-zmk,matrix_transform = &default_transform;
-};
+    chosen {
+        zmk,matrix_transform = &default_transform;
+    };
 };
 
 / {
-behaviors {
-lpht: left_positional_hold_tap {
-compatible = "zmk,behavior-hold-tap";
-#binding-cells = <2>;
-flavor = "balanced";
-tapping-term-ms = <500>;
-quick-tap-ms = <0>;
-bindings = <&kp>, <&kp>;
-hold-trigger-key-positions = <KEYS_R KEYS_T>;
-hold-trigger-on-release;
-};
-rpht: right_positional_hold_tap {
-compatible = "zmk,behavior-hold-tap";
-#binding-cells = <2>;
-flavor = "balanced";
-tapping-term-ms = <500>;
-quick-tap-ms = <0>;
-bindings = <&kp>, <&kp>;
-hold-trigger-key-positions = <KEYS_L KEYS_T>;
-hold-trigger-on-release;
-};
-};
+        behaviors {
+                lpht: left_positional_hold_tap {
+                        compatible = "zmk,behavior-hold-tap";
+                        #binding-cells = <2>;
+                        flavor = "balanced";
+                        tapping-term-ms = <500>;
+                        quick-tap-ms = <0>;
+                        bindings = <&kp>, <&kp>;
+                        hold-trigger-key-positions = <KEYS_R KEYS_T>;
+                        hold-trigger-on-release;
+                };
+                rpht: right_positional_hold_tap {
+                        compatible = "zmk,behavior-hold-tap";
+                        #binding-cells = <2>;
+                        flavor = "balanced";
+                        tapping-term-ms = <500>;
+                        quick-tap-ms = <0>;
+                        bindings = <&kp>, <&kp>;
+                        hold-trigger-key-positions = <KEYS_L KEYS_T>;
+                        hold-trigger-on-release;
+                };
+        };
 
-keymap {
-compatible = "zmk,keymap";
+        combos {
+            compatible = "zmk,combos";
+            combo_paste {
+                timeout-ms = <30>;
+                key-positions = <3 4>;
+                bindings = <&kp LC(V)>;
+            };
+            combo_copy {
+                timeout-ms = <30>;
+                key-positions = <26 27>;
+                bindings = <&kp LC(C)>;
+            };
+            combo_undo {
+                timeout-ms = <30>;
+                key-positions = <25 26>;
+                bindings = <&kp LC(Z)>;
+            };
+            combo_redo {
+                timeout-ms = <30>;
+                key-positions = <2 3>;
+                bindings = <&kp LC(Y)>;
+            };
+        };
 
-default_layer {
-bindings = <
-&kp ESC       &kp Q         &kp W         &kp F         &kp P         &kp G                   &kp J         &kp L         &kp U         &kp Y         &kp P         &none
-        &lpht LWIN         &lpht LCMD A  &lpht LALT R  &lpht LCTRL S &lpht LSHFT T &kp D                   &kp H         &rpht LSHFT N &rpht LCTRL E &rpht LALT I  &rpht LCMD O  &rpht LWIN
-        &none         &kp Z         &kp X         &kp C         &kp V         &kp B                   &kp K         &kp M         &kp DOT       &kp COMMA     &none         &none
-&kp TAB       &mo NAV       &kp BSPC                &kp SPACE     &kp RET       &none
->;
-};
+        keymap {
+                compatible = "zmk,keymap";
 
-nav_layer {
-bindings = <
+                default_layer {
+                        bindings = <
+&kp ESC        &kp Q         &kp W         &kp F         &kp P         &kp G                   &kp J         &kp L         &kp U         &kp Y         &kp P         &none
+&lpht LWIN ESC &lpht LCMD A  &lpht LALT R  &lpht LCTRL S &lpht LSHFT T &kp D                   &kp H         &rpht LSHFT N &rpht LCTRL E &rpht LALT I  &rpht LCMD O  &rpht LWIN ESC
+&none          &kp Z         &kp X         &kp C         &kp V         &kp B                   &kp K         &kp M         &kp DOT       &kp COMMA     &none         &none
+                                          &kp TAB       &lt NAV LSHFT &kp BSPC                &kp SPACE     &kp RET       &none
+                        >;
+                };
+
+                nav_layer {
+                        bindings = <
 &none         &none         &none         &none         &none         &none                   &none         &none         &none          &none         &none         &none
 &none         &kp LCMD      &kp LALT      &kp LCTRL     &kp LSHFT     &none                   &none         &kp LEFT      &kp RIGHT      &kp UP        &kp DOWN      &none
 &none         &none         &none         &none         &none         &none                   &none         &none         &none          &none         &none         &none
-&none         &none         &none                   &none         &none         &none
->;
-};
-};
+                                          &none         &none         &none                   &none         &none         &none
+                        >;
+                };
+        };
 };
 
 
