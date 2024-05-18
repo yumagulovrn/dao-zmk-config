@@ -104,7 +104,7 @@
                         bindings = <&kp QMARK>, <&kp EXCL>;
                         mods = <(MOD_LSFT)>;
                 };
-                quex: question_exclamation {
+                bade: backspace_delete {
                         compatible = "zmk,behavior-mod-morph";
                         #binding-cells = <0>;
                         bindings = <&kp BSPC>, <&kp DEL>;
