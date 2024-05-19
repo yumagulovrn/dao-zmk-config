@@ -150,10 +150,10 @@
                         key-positions = <31 32>;
                         bindings = <&unda>;
                 };
-                combo_esc {
+                combo_caps_word {
                         timeout-ms = <30>;
                         key-positions = <32 33>;
-                        bindings = <&kp ESC>;
+                        bindings = <&caps_word>;
                 };
                 combo_gaming {
                         timeout-ms = <30>;
