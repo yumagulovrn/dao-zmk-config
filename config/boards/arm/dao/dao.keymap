@@ -48,31 +48,31 @@
                 doco: dot_colon {
                         compatible = "zmk,behavior-mod-morph";
                         #binding-cells = <0>;
-                        bindings = <&kp DOT>, <&kp COLON>;
+                        bindings = <&kp DOT>, <&kp GT>;
                         mods = <(MOD_LSFT)>;
                 };
                 cose: comma_semicolon {
                         compatible = "zmk,behavior-mod-morph";
                         #binding-cells = <0>;
-                        bindings = <&kp COMMA>, <&kp SEMI>;
+                        bindings = <&kp COMMA>, <&kp LT>;
                         mods = <(MOD_LSFT)>;
                 };
                 unda: underscore_dash {
                         compatible = "zmk,behavior-mod-morph";
                         #binding-cells = <0>;
-                        bindings = <&kp UNDER>, <&kp MINUS>;
+                        bindings = <&kp QMARK>, <&kp FSLH>;
                         mods = <(MOD_LSFT)>;
                 };
                 para: parantheses {
                         compatible = "zmk,behavior-mod-morph";
                         #binding-cells = <0>;
-                        bindings = <&kp LPAR>, <&kp RPAR>;
+                        bindings = <&kp STAR>, <&kp LPAR>;
                         mods = <(MOD_LSFT)>;
                 };
                 qout: qoutes {
                         compatible = "zmk,behavior-mod-morph";
                         #binding-cells = <0>;
-                        bindings = <&kp COMMA>, <&kp SEMI>;
+                        bindings = <&kp AT>, <&kp BSLH>;
                         mods = <(MOD_LSFT)>;
                 };
                 cubr: curly_braces {
@@ -90,7 +90,7 @@
                 slas: slashes {
                         compatible = "zmk,behavior-mod-morph";
                         #binding-cells = <0>;
-                        bindings = <&kp FSLH>, <&kp BSLH>;
+                        bindings = <&kp CARET>, <&kp BSLH>;
                         mods = <(MOD_LSFT)>;
                 };
                 anbr: angle_brackets {
@@ -102,7 +102,7 @@
                 quex: question_exclamation {
                         compatible = "zmk,behavior-mod-morph";
                         #binding-cells = <0>;
-                        bindings = <&kp QMARK>, <&kp EXCL>;
+                        bindings = <&kp UNDER>, <&kp EXCL>;
                         mods = <(MOD_LSFT)>;
                 };
                 bade: backspace_delete {
@@ -137,12 +137,12 @@
                 };
                 combo_anbr {
                         timeout-ms = <30>;
-                        key-positions = <25 26>;
+                        key-positions = <26 27>;
                         bindings = <&anbr>;
                 };
                 combo_cubr {
                         timeout-ms = <30>;
-                        key-positions = <26 27>;
+                        key-positions = <27 28>;
                         bindings = <&cubr>;
                 };
                 combo_unda {
@@ -167,9 +167,9 @@
 
                 default_layer {
                         bindings = <
-&kp ESC        &kp Q         &kp W         &kp F         &kp P         &kp G                   &kp J         &kp L         &kp U         &kp Y         &kp P         &kp ESC
-&lpht LWIN F12 &lpht LCMD A  &lpht LALT R  &lpht LCTRL S &lpht LSHFT T &kp D                   &kp H         &rpht LSHFT N &rpht LCTRL E &rpht LALT I  &rpht LCMD O  &rpht LWIN ESC
-&kp GRAVE      &kp Z         &kp X         &kp C         &kp V         &kp B                   &kp K         &kp M         &doco         &cose         &quex         &kp ESC
+&kp ESC        &kp Q         &kp W         &kp F         &kp P         &kp G                   &kp J         &kp L         &kp U         &kp Y         &kp P         &kp SQT
+&lpht LWIN F12 &lpht LCMD A  &lpht LALT R  &lpht LCTRL S &lpht LSHFT T &kp D                   &kp H         &rpht LSHFT N &rpht LCTRL E &rpht LALT I  &rpht LCMD O  &rpht LWIN LBKT
+&kp PLUS       &kp Z         &kp X         &kp C         &kp V         &kp B                   &kp K         &kp M         &doco         &cose         &quex         &kp ESC
                                            &lt NAV LSHFT &kp TAB       &bade                   &kp SPACE     &kp RET       &lt NUM LCTRL
                         >;
                 };
@@ -178,7 +178,7 @@
                         bindings = <
 &none         &none         &none         &none         &bt BT_SEL 0  &bt BT_SEL 1            &none         &kp C_PP      &kp C_VOL_DN   &kp C_VOL_UP  &kp C_MUTE    &kp PSCRN
 &none         &kp LCMD      &kp LALT      &kp LCTRL     &kp LSHFT     &none                   &none         &kp LEFT      &kp RIGHT      &kp UP        &kp DOWN      &none
-&none         &none         &none         &none         &none         &none                   &kp AT        &kp EQUAL     &kp HASH       &kp DLLR      &kp PRCNT     &kp TILDE
+&none         &none         &none         &none         &none         &none                   &kp AT        &kp RPAR      &kp HASH       &kp DLLR      &kp PRCNT     &kp TILDE
                                           &none         &kp TAB       &bade                   &kp SPACE     &kp RET       &none
                         >;
                 };
@@ -187,7 +187,7 @@
                         bindings = <
 &none         &kp F1        &kp F2        &kp F3        &kp F4        &kp F5                  &kp F6        &kp F7        &kp F8         &kp F9        &kp F10       &kp F11
 &none         &kp N1        &kp N2        &kp N3        &kp N4        &kp N5                  &kp N6        &kp N7        &kp N8         &kp N9        &kp N0        &none
-&none         &kp CARET     &kp AMPS      &kp PLUS      &kp STAR      &kp PIPE                &none         &none         &none          &none         &none         &none
+&none         &kp RBRC      &kp AMPS      &kp MINUS      &kp PIPE      &kp PIPE                &none         &none         &none          &none         &none         &none
                                           &none         &kp TAB       &bade                   &kp SPACE     &kp RET       &none
                         >;
                 };
@@ -202,3 +202,41 @@
                 };
         };
 };
+
+
+
+// Code = Danish
+
+/*
+// Missing to cover code
+LBKT = å
+DLLR = ¤
+AT = "
+TILDE = §
+PIPE = *
+BSLH = '
+LT = ;
+GT = :
+RBRC = ^
+RBKT = ¨
+LBRC = Å
+
+
+
+// Found covering code
+MINUS = +
+UNDER = ?
+SQT = æ
+QMARK = _
+AMPS = /
+CARET = &
+PLUS = `
+STAR = (
+LPAR = )
+EQUAL = ´
+RPAR = =
+FSLH = -
+DQT = ,
+GRAVE = ½
+
+ */
