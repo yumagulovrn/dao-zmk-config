@@ -113,6 +113,27 @@
                 };
         };
 
+        macros {
+                tilde: tilde {
+                        label = "macro_tilde";
+                        compatible = "zmk,behavior-macro";
+                        #binding-cells = <0>;
+                        bindings = <&kp RA(RBKT) &kp RA(RBKT)>;
+                };
+                btick: btick {
+                        label = "macro_btick";
+                        compatible = "zmk,behavior-macro";
+                        #binding-cells = <0>;
+                        bindings = <&kp PLUS &kp PLUS>;
+                };
+                hat: hat {
+                        label = "macro_hat";
+                        compatible = "zmk,behavior-macro";
+                        #binding-cells = <0>;
+                        bindings = <&kp RBRC &kp RBRC>;
+                };
+        };
+
         combos {
                 compatible = "zmk,combos";
                 combo_sqbr {
@@ -169,7 +190,7 @@
                         bindings = <
 &kp ESC        &kp Q         &kp W         &kp F         &kp P         &kp G                   &kp J         &kp L         &kp U         &kp Y         &kp P         &kp SQT
 &lpht LWIN F12 &lpht LCMD A  &lpht LALT R  &lpht LCTRL S &lpht LSHFT T &kp D                   &kp H         &rpht LSHFT N &rpht LCTRL E &rpht LALT I  &rpht LCMD O  &rpht LWIN LBKT
-&kp PLUS       &kp Z         &kp X         &kp C         &kp V         &kp B                   &kp K         &kp M         &doco         &cose         &quex         &kp ESC
+&btick         &kp Z         &kp X         &kp C         &kp V         &kp B                   &kp K         &kp M         &doco         &cose         &quex         &kp SEMI
                                            &lt NAV LSHFT &kp TAB       &bade                   &kp SPACE     &kp RET       &lt NUM LCTRL
                         >;
                 };
@@ -178,7 +199,7 @@
                         bindings = <
 &none         &none         &none         &none         &bt BT_SEL 0  &bt BT_SEL 1            &none         &kp C_PP      &kp C_VOL_DN   &kp C_VOL_UP  &kp C_MUTE    &kp PSCRN
 &none         &kp LCMD      &kp LALT      &kp LCTRL     &kp LSHFT     &none                   &none         &kp LEFT      &kp RIGHT      &kp UP        &kp DOWN      &none
-&none         &none         &none         &none         &none         &none                   &kp AT        &kp RPAR      &kp HASH       &kp DLLR      &kp PRCNT     &kp TILDE
+&none         &none         &none         &none         &none         &none                   &kp AT        &kp RPAR      &kp HASH       &kp DLLR      &kp PRCNT     &tilde
                                           &none         &kp TAB       &bade                   &kp SPACE     &kp RET       &none
                         >;
                 };
@@ -187,7 +208,7 @@
                         bindings = <
 &none         &kp F1        &kp F2        &kp F3        &kp F4        &kp F5                  &kp F6        &kp F7        &kp F8         &kp F9        &kp F10       &kp F11
 &none         &kp N1        &kp N2        &kp N3        &kp N4        &kp N5                  &kp N6        &kp N7        &kp N8         &kp N9        &kp N0        &none
-&none         &kp RBRC      &kp AMPS      &kp MINUS      &kp PIPE      &kp PIPE                &none         &none         &none          &none         &none         &none
+&none         &hat          &kp AMPS      &kp MINUS     &kp PIPE      &kp PIPE                &none         &none         &none          &none         &none         &none
                                           &none         &kp TAB       &bade                   &kp SPACE     &kp RET       &none
                         >;
                 };
