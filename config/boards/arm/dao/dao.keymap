@@ -78,25 +78,25 @@
                 cubr: curly_braces {
                         compatible = "zmk,behavior-mod-morph";
                         #binding-cells = <0>;
-                        bindings = <&kp LBRC>, <&kp RBRC>;
+                        bindings = <&kp RA(N7)>, <&kp RA(N0)>;
                         mods = <(MOD_LSFT)>;
                 };
                 sqbr: square_brackets {
                         compatible = "zmk,behavior-mod-morph";
                         #binding-cells = <0>;
-                        bindings = <&kp LBKT>, <&kp RBKT>;
+                        bindings = <&kp RA(N8)>, <&kp RA(N9)>;
                         mods = <(MOD_LSFT)>;
                 };
                 slas: slashes {
                         compatible = "zmk,behavior-mod-morph";
                         #binding-cells = <0>;
-                        bindings = <&kp CARET>, <&kp BSLH>;
+                        bindings = <&kp CARET>, <&kp RA(NUBS)>;
                         mods = <(MOD_LSFT)>;
                 };
                 anbr: angle_brackets {
                         compatible = "zmk,behavior-mod-morph";
                         #binding-cells = <0>;
-                        bindings = <&kp LT>, <&kp GT>;
+                        bindings = <&kp NUBS>, <&kp LS(NUBS)>;
                         mods = <(MOD_LSFT)>;
                 };
                 quex: question_exclamation {
@@ -199,7 +199,7 @@
                         bindings = <
 &none         &none         &none         &none         &bt BT_SEL 0  &bt BT_SEL 1            &none         &kp C_PP      &kp C_VOL_DN   &kp C_VOL_UP  &kp C_MUTE    &kp PSCRN
 &none         &kp LCMD      &kp LALT      &kp LCTRL     &kp LSHFT     &none                   &none         &kp LEFT      &kp RIGHT      &kp UP        &kp DOWN      &none
-&none         &none         &none         &none         &none         &none                   &kp AT        &kp RPAR      &kp HASH       &kp DLLR      &kp PRCNT     &tilde
+&none         &none         &none         &none         &none         &none                   &kp RA(N2)    &kp RPAR      &kp HASH       &kp RA(N4)    &kp PRCNT     &tilde
                                           &none         &kp TAB       &bade                   &kp SPACE     &kp RET       &none
                         >;
                 };
@@ -208,7 +208,7 @@
                         bindings = <
 &none         &kp F1        &kp F2        &kp F3        &kp F4        &kp F5                  &kp F6        &kp F7        &kp F8         &kp F9        &kp F10       &kp F11
 &none         &kp N1        &kp N2        &kp N3        &kp N4        &kp N5                  &kp N6        &kp N7        &kp N8         &kp N9        &kp N0        &none
-&none         &hat          &kp AMPS      &kp MINUS     &kp PIPE      &kp PIPE                &none         &none         &none          &none         &none         &none
+&none         &hat          &kp AMPS      &kp MINUS     &kp PIPE      &kp RA(EQUAL)           &none         &none         &none          &none         &none         &none
                                           &none         &kp TAB       &bade                   &kp SPACE     &kp RET       &none
                         >;
                 };
@@ -223,41 +223,3 @@
                 };
         };
 };
-
-
-
-// Code = Danish
-
-/*
-// Missing to cover code
-LBKT = å
-DLLR = ¤
-AT = "
-TILDE = §
-PIPE = *
-BSLH = '
-LT = ;
-GT = :
-RBRC = ^
-RBKT = ¨
-LBRC = Å
-
-
-
-// Found covering code
-MINUS = +
-UNDER = ?
-SQT = æ
-QMARK = _
-AMPS = /
-CARET = &
-PLUS = `
-STAR = (
-LPAR = )
-EQUAL = ´
-RPAR = =
-FSLH = -
-DQT = ,
-GRAVE = ½
-
- */
