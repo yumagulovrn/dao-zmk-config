@@ -146,10 +146,10 @@
                         key-positions = <3 4>;
                         bindings = <&para>;
                 };
-                combo_qout {
+                combo_unused {
                         timeout-ms = <30>;
                         key-positions = <7 8>;
-                        bindings = <&qout>;
+                        bindings = <&kp ESC>;
                 };
                 combo_slas {
                         timeout-ms = <30>;
@@ -206,10 +206,10 @@
 
                 num_layer {
                         bindings = <
-&none         &kp F1        &kp F2        &kp F3        &kp F4        &kp F5                  &kp F6        &kp F7        &kp F8         &kp F9        &kp F10       &kp F11
-&none         &kp N1        &kp N2        &kp N3        &kp N4        &kp N5                  &kp N6        &kp N7        &kp N8         &kp N9        &kp N0        &none
-&none         &hat          &kp AMPS      &kp MINUS     &kp PIPE      &kp RA(EQUAL)           &none         &none         &none          &none         &none         &none
-                                          &none         &kp TAB       &bade                   &kp SPACE     &kp RET       &none
+&none          &kp F1        &kp F2        &kp F3         &kp F4         &kp F5                  &kp F6        &kp F7         &kp F8         &kp F9        &kp F10       &kp F11
+&lpht LWIN ESC &lpht LCMD N1 &lpht LALT N2 &lpht LCTRL N3 &lpht LSHFT N4 &kp N5                  &kp N6        &rpht LSHFT N7 &rpht LCTRL N8 &rpht LALT N9 &rpht LCMD N0 &rpht LWIN ESC
+&none          &hat          &kp AMPS      &kp MINUS      &kp PIPE       &kp RA(EQUAL)           &none         &none          &none          &none         &none         &none
+                                          &none           &kp TAB        &bade                   &kp SPACE     &kp RET        &none
                         >;
                 };
 
