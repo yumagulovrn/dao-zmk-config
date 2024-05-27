@@ -197,7 +197,7 @@
 
                 nav_layer {
                         bindings = <
-&none         &none         &none         &none         &bt BT_SEL 0  &bt BT_SEL 1            &none         &kp C_PP      &kp C_VOL_DN   &kp C_VOL_UP  &kp C_MUTE    &kp PSCRN
+&none         &none         &none         &bt BT_CLR    &bt BT_SEL 0  &bt BT_SEL 1            &none         &kp C_PP      &kp C_VOL_DN   &kp C_VOL_UP  &kp C_MUTE    &kp PSCRN
 &kp LWIN      &kp LCMD      &kp LALT      &kp LCTRL     &kp LSHFT     &none                   &none         &kp LEFT      &kp RIGHT      &kp UP        &kp DOWN      &none
 &none         &none         &none         &none         &none         &none                   &kp RA(N2)    &kp RPAR      &kp HASH       &kp RA(N4)    &kp PRCNT     &tilde
                                           &none         &kp TAB       &bade                   &kp SPACE     &kp RET       &none
