@@ -111,6 +111,13 @@
                         bindings = <&kp BSPC>, <&kp DEL>;
                         mods = <(MOD_LSFT)>;
                 };
+                laycap: layer_capsword {
+                    compatible = "zmk,behavior-hold-tap";
+                    #binding-cells = <2>;
+                    flavor = "hold-preferred";
+                    tapping-term-ms = <200>;
+                    bindings = <&mo>, <&caps_word>;
+                };
         };
 
         macros {
@@ -188,19 +195,19 @@
 
                 default_layer {
                         bindings = <
-&kp ESC        &kp Q         &kp W         &kp F         &kp P         &kp G                   &kp J         &kp L         &kp U         &kp Y         &qout         &kp LBKT
-&lpht LWIN F12 &lpht LCMD A  &lpht LALT R  &lpht LCTRL S &lpht LSHFT T &kp D                   &kp H         &rpht LSHFT N &rpht LCTRL E &rpht LALT I  &rpht LCMD O  &rpht LWIN SQT
-&btick         &kp Z         &kp X         &kp C         &kp V         &kp B                   &kp K         &kp M         &doco         &cose         &quex         &kp SEMI
-                                           &to NAV &kp TAB       &bade                   &kp SPACE     &kp RET       &to NUM LCTRL
+&kp ESC        &kp Q         &kp W         &kp F         &kp P         &kp G                   &kp J           &kp L         &kp U          &kp Y         &qout         &kp LBKT
+&lpht LWIN F12 &lpht LCMD A  &lpht LALT R  &lpht LCTRL S &lpht LSHFT T &kp D                   &kp H           &rpht LSHFT N &rpht LCTRL E  &rpht LALT I  &rpht LCMD O  &rpht LWIN SQT
+&btick         &kp Z         &kp X         &kp C         &kp V         &kp B                   &kp K           &kp M         &doco          &cose         &quex         &kp SEMI
+                                           &laycap NAV 0 &kp TAB       &bade                   &kp SPACE       &kp RET       &mo NUM
                         >;
                 };
 
                 nav_layer {
                         bindings = <
-&none          &none       &none    &bt BT_CLR      &bt BT_SEL 0  &bt BT_SEL 1             &kp PIPE       &kp C_PP      &kp C_VOL_DN   &kp C_VOL_UP  &kp MINUS     &kp AMPS
-&trans         &trans      &trans   &trans     &trans        &trans                   &kp RA(EQUAL)  &kp LEFT      &kp RIGHT      &kp UP        &kp DOWN      &hat
-&none          &none       &none    &none      &none         &none                    &kp RA(N2)     &kp RPAR      &kp HASH       &kp RA(N4)    &kp PRCNT     &tilde
-                                    &none      &kp TAB       &bade                    &kp SPACE      &kp RET       &none
+&none          &none         &none         &bt BT_CLR    &bt BT_SEL 0  &bt BT_SEL 1             &kp PIPE       &kp C_PP      &kp C_VOL_DN   &kp C_VOL_UP  &kp MINUS     &kp AMPS
+&trans         &trans        &trans        &trans        &trans        &trans                   &kp RA(EQUAL)  &kp LEFT      &kp RIGHT      &kp UP        &kp DOWN      &hat
+&none          &none         &none         &none         &none         &none                    &kp RA(N2)     &kp RPAR      &kp HASH       &kp RA(N4)    &kp PRCNT     &tilde
+                                           &none         &kp TAB       &bade                    &kp SPACE      &kp RET       &none
                         >;
                 };
 
