@@ -153,10 +153,10 @@
                         key-positions = <3 4>;
                         bindings = <&para>;
                 };
-                combo_unused {
+                combo_game {
                         timeout-ms = <30>;
                         key-positions = <7 8>;
-                        bindings = <&kp ESC>;
+                        bindings = <&tog GAME>;
                 };
                 combo_slas {
                         timeout-ms = <30>;
@@ -182,11 +182,6 @@
                         timeout-ms = <30>;
                         key-positions = <32 33>;
                         bindings = <&caps_word>;
-                };
-                combo_gaming {
-                        timeout-ms = <30>;
-                        key-positions = <36 41>;
-                        bindings = <&tog GAME>;
                 };
         };
 
