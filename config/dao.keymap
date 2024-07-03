@@ -41,7 +41,7 @@
             bindings = <
 &kp TAB     &kp NUMBER_1  &kp NUMBER_2    &kp NUMBER_3  &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &kp NUMBER_7      &kp NUMBER_8       &kp NUMBER_9    &kp NUMBER_0  &kp BACKSLASH
 &kp ESCAPE  &kp EXCL      &kp AT          &kp HASH      &kp DLLR      &kp PRCNT     &kp CARET     &kp AMPS          &kp STAR           &kp LPAR        &kp RPAR      &mt RCTRL MINUS
-&kp LCTRL   &kp GRAVE     &kp UNDERSCORE  &kp PLUS      &kp EQUAL     &kp N5        &kp TILDE     &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp LEFT_BRACE  &kp RBRC      &kp RALT
+&kp LCTRL   &kp MINUS     &kp UNDERSCORE  &kp PLUS      &kp EQUAL     &kp GRAVE     &kp TILDE     &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp LEFT_BRACE  &kp RBRC      &kp RALT
                                           &kp TAB       &trans        &trans        &trans        &trans            &kp LWIN
             >;
         };
