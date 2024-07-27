@@ -15,6 +15,7 @@
 };
 
 &kscan0 {
+	debounce-period = <20>;
 	col-gpios
 		= <&gpio0 12 GPIO_ACTIVE_HIGH>
 		, <&gpio1  9 GPIO_ACTIVE_HIGH>
