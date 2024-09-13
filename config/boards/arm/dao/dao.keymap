@@ -48,61 +48,61 @@
                 doco: dot_colon {
                         compatible = "zmk,behavior-mod-morph";
                         #binding-cells = <0>;
-                        bindings = <&kp DOT>, <&kp GT>;
+                        bindings = <&kp DOT>, <&kp COLON>;
                         mods = <(MOD_LSFT)>;
                 };
                 cose: comma_semicolon {
                         compatible = "zmk,behavior-mod-morph";
                         #binding-cells = <0>;
-                        bindings = <&kp COMMA>, <&kp LT>;
+                        bindings = <&kp COMMA>, <&kp SEMI>;
                         mods = <(MOD_LSFT)>;
                 };
                 unda: underscore_dash {
                         compatible = "zmk,behavior-mod-morph";
                         #binding-cells = <0>;
-                        bindings = <&kp QMARK>, <&kp FSLH>;
+                        bindings = <&kp UNDER>, <&kp KP_MINUS>;
                         mods = <(MOD_LSFT)>;
                 };
                 para: parantheses {
                         compatible = "zmk,behavior-mod-morph";
                         #binding-cells = <0>;
-                        bindings = <&kp STAR>, <&kp LPAR>;
+                        bindings = <&kp LPAR>, <&kp RPAR>;
                         mods = <(MOD_LSFT)>;
                 };
                 qout: qoutes {
                         compatible = "zmk,behavior-mod-morph";
                         #binding-cells = <0>;
-                        bindings = <&kp AT>, <&kp BSLH>;
+                        bindings = <&kp DQT>, <&kp SQT>;
                         mods = <(MOD_LSFT)>;
                 };
                 cubr: curly_braces {
                         compatible = "zmk,behavior-mod-morph";
                         #binding-cells = <0>;
-                        bindings = <&kp RA(N7)>, <&kp RA(N0)>;
+                        bindings = <&kp LBRC>, <&kp RBRC>;
                         mods = <(MOD_LSFT)>;
                 };
                 sqbr: square_brackets {
                         compatible = "zmk,behavior-mod-morph";
                         #binding-cells = <0>;
-                        bindings = <&kp RA(N8)>, <&kp RA(N9)>;
+                        bindings = <&kpLBKT>, <&kp RBKT>;
                         mods = <(MOD_LSFT)>;
                 };
                 slas: slashes {
                         compatible = "zmk,behavior-mod-morph";
                         #binding-cells = <0>;
-                        bindings = <&kp CARET>, <&kp RA(NUBS)>;
+                        bindings = <&kp FSLH>, <&kp BSLH>;
                         mods = <(MOD_LSFT)>;
                 };
                 anbr: angle_brackets {
                         compatible = "zmk,behavior-mod-morph";
                         #binding-cells = <0>;
-                        bindings = <&kp NUBS>, <&kp LS(NUBS)>;
+                        bindings = <&kp LT>, <&kp GT>;
                         mods = <(MOD_LSFT)>;
                 };
                 quex: question_exclamation {
                         compatible = "zmk,behavior-mod-morph";
                         #binding-cells = <0>;
-                        bindings = <&kp UNDER>, <&kp EXCL>;
+                        bindings = <&kp QMARK>, <&kp EXCL>;
                         mods = <(MOD_LSFT)>;
                 };
                 bade: backspace_delete {
@@ -199,9 +199,9 @@
 
                 nav_layer {
                         bindings = <
-&none          &none         &none         &bt BT_CLR    &bt BT_SEL 0  &bt BT_SEL 1             &kp PIPE       &kp C_PP      &kp C_VOL_DN   &kp C_VOL_UP  &kp MINUS     &kp AMPS
-&trans         &trans        &trans        &trans        &trans        &trans                   &kp RA(EQUAL)  &kp LEFT      &kp RIGHT      &kp UP        &kp DOWN      &hat
-&none          &none         &none         &none         &none         &none                    &kp RA(N2)     &kp RPAR      &kp HASH       &kp RA(N4)    &kp PRCNT     &kp RA(RBKT)
+&none          &none         &none         &bt BT_CLR    &bt BT_SEL 0  &bt BT_SEL 1             &kp STAR       &kp C_PP      &kp C_VOL_DN   &kp C_VOL_UP  &kp MINUS     &kp AMPS
+&trans         &trans        &trans        &trans        &trans        &trans                   &kp PIPE       &kp LEFT      &kp RIGHT      &kp UP        &kp DOWN      &kp CARET
+&none          &none         &none         &none         &none         &none                    &kp AT         &kp EQUAL     &kp HASH       &kp DLLR      &kp PRCNT     &kp TILDE
                                            &none         &kp TAB       &bade                    &kp SPACE      &kp RET       &none
                         >;
                 };
